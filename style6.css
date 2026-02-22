@@ -1,0 +1,201 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+
+      font-family: 'Poppins', sans-serif;}
+
+#main {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    position: relative;
+}
+
+/* LEFT SECTION */
+#left {
+    width: 58%;
+    background-color: #495237;
+    display: flex;
+    flex-direction: column;
+}
+
+/* NAV */
+#nav {
+    height: 75px;
+    background-color: #c3768a;
+    display: flex;
+    gap: 65px;
+    align-items: center;
+    padding: 0 20px;
+}
+
+#nav h1 {
+     font-family: 'Playfair Display', serif;
+    font-size: clamp(22px, 2vw, 30px);
+    color: white;
+}
+
+a {
+     font-family: 'Playfair Display', serif;
+    font-size: clamp(14px, 1vw, 18px);
+    color: white;
+    text-decoration: underline;
+}
+
+/* IMAGE CENTER */
+#content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+   
+    align-items: flex-start;   /* changed from center */
+     /* adjust this value if needed */
+}
+
+
+#content img {
+ max-width: 40%;
+    height: auto;
+    
+}
+
+/* FLOWER LIST */
+#flower-list {
+    display: flex;
+    gap: 60px;
+    padding: 40px;
+    justify-content: center; /* FIXED instead of margin-left */
+}
+
+.list-left,
+.list-right {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    color: white;
+}
+
+.list-left {
+     font-family: 'Playfair Display', serif;
+    font-size: clamp(15px, 2vw, 19px);
+    font-weight: 600;
+    
+}
+
+.list-right {
+     font-family: 'Playfair Display', serif;
+    font-size: clamp(14px, 1vw, 18px);
+    font-weight: 300;
+     transform: translateY(9px);
+      
+}
+
+/* CENTER SECTION */
+#center {
+    width: 35%;
+    background-color: #c3797d;
+    background-image: url("pink.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+/* SMALL IMAGE */
+#third {
+    position: absolute;
+    bottom: 25px;
+    right: -50px;
+}
+
+#third img {
+    width: clamp(80px, 8vw, 110px);
+}
+
+/* RIGHT SECTION */
+#right {
+    width: 7%;
+    background-color: #c3768a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.links {
+     font-family: 'Playfair Display', serif;
+    transform: rotate(90deg);
+    display: flex;
+    gap: 20px;
+}
+
+/* CENTER TEXT */
+#centercontent {
+    position: absolute;
+    top: 50%;
+    left: 56%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    text-align: center;
+}
+
+.title {
+     font-family: 'Playfair Display', serif;
+
+    font-size: clamp(40px, 5vw, 86px);
+    font-weight: 900;
+    color: white;
+    text-shadow: 5px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.subtitle {
+     font-family: 'Playfair Display', serif;
+    font-size: clamp(12px, 1vw, 17px);
+    font-weight: 400;
+    letter-spacing: 2px;
+    margin-top: -8px;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* RESPONSIVE FIX (WITHOUT CHANGING DESIGN) */
+@media (max-width: 1024px) {
+
+    #centercontent {
+        left: 60%;
+    }
+
+    #third {
+        right: -30px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    #main {
+        flex-direction: column;
+    }
+
+    #left, #center, #right {
+        width: 100%;
+        height: auto;
+    }
+
+    #right {
+        padding: 20px 0;
+    }
+
+    .links {
+        transform: rotate(0deg);
+    }
+
+    #centercontent {
+        left: 50%;
+        top: 40%;
+    }
+}
